@@ -6,8 +6,29 @@
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
+      <parameter>
+        <name>BDOLAP</name>
+        <default_value>olap_ciat</default_value>
+        <description/>
+      </parameter>
+      <parameter>
+        <name>BDTRAN</name>
+        <default_value>policies_ciat</default_value>
+        <description/>
+      </parameter>
+      <parameter>
+        <name>HOST</name>
+        <default_value>localhost</default_value>
+        <description/>
+      </parameter>
+      <parameter>
+        <name>Usertoconnect</name>
+        <default_value>root</default_value>
+        <description/>
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
@@ -430,19 +451,19 @@
     <created_date>2020/09/20 16:30:11.227</created_date>
     <modified_user>-</modified_user>
     <modified_date>2020/09/20 16:30:11.227</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
     <name>CiatOlap</name>
-    <server>localhost</server>
+    <server>${HOST}</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>olap_ciat</database>
+    <database>${BDOLAP}</database>
     <port>3306</port>
-    <username>root</username>
+    <username>${Usertoconnect}</username>
     <password>Encrypted 2be98af8b06c68780a2189c228ec3fb94</password>
     <servername/>
     <data_tablespace/>
@@ -492,12 +513,12 @@
   </connection>
   <connection>
     <name>CiatPolicies</name>
-    <server>localhost</server>
+    <server>${HOST}</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>policies_ciat</database>
+    <database>${BDTRAN}</database>
     <port>3306</port>
-    <username>root</username>
+    <username>${Usertoconnect}</username>
     <password>Encrypted 2be98af8b06c68780a2189c228ec3fb94</password>
     <servername/>
     <data_tablespace/>
@@ -697,14 +718,6 @@ FROM policies_ciat.project_policy_sub_idos;
   <attributes>
     <group>
       <name>explorerState</name>
-      <attribute>
-        <key>Readfromproject_policy_sub_idos</key>
-        <value/>
-      </attribute>
-      <attribute>
-        <key>dm_group_srf_sub_idos</key>
-        <value/>
-      </attribute>
     </group>
   </attributes>
 </transformation>

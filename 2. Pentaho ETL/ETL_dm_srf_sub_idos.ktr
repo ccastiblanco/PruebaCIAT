@@ -9,6 +9,26 @@
     <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
+      <parameter>
+        <name>BDOLAP</name>
+        <default_value>olap_ciat</default_value>
+        <description/>
+      </parameter>
+      <parameter>
+        <name>BDTRAN</name>
+        <default_value>policies_ciat</default_value>
+        <description/>
+      </parameter>
+      <parameter>
+        <name>HOST</name>
+        <default_value>localhost</default_value>
+        <description/>
+      </parameter>
+      <parameter>
+        <name>Usertoconnect</name>
+        <default_value>root</default_value>
+        <description/>
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
@@ -438,12 +458,12 @@
   </notepads>
   <connection>
     <name>CiatOlap</name>
-    <server>localhost</server>
+    <server>${HOST}</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>olap_ciat</database>
+    <database>${BDOLAP}</database>
     <port>3306</port>
-    <username>root</username>
+    <username>${Usertoconnect}</username>
     <password>Encrypted 2be98af8b06c68780a2189c228ec3fb94</password>
     <servername/>
     <data_tablespace/>
@@ -493,12 +513,12 @@
   </connection>
   <connection>
     <name>CiatPolicies</name>
-    <server>localhost</server>
+    <server>${HOST}</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>policies_ciat</database>
+    <database>${BDTRAN}</database>
     <port>3306</port>
-    <username>root</username>
+    <username>${Usertoconnect}</username>
     <password>Encrypted 2be98af8b06c68780a2189c228ec3fb94</password>
     <servername/>
     <data_tablespace/>
